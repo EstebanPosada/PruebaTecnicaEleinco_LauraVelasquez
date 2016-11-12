@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PruebaTecnicaEleinco</string>
+    <string name="correo">Correo</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="ingrese_correo">Ingrese correo</string>
+    <string name="ingrese_contraseña">Ingrese contraseña</string>
+    <string name="login">LOGIN</string>
+    <string name="error_login">Los datos ingresados no corresponden, por favor verifique e ingrese nuevamente</string>
+    <string name="restaurante_prueba">JC Delicias</string>
+    <string name="distancia_prueba">500m</string>
+    <string name="current_location">Ubicación Actual</string>
+    <string name="restaurants_location">Ubicación Restaurantes</string>
+    <string name="your_location">Estas aquí</string>
+</resources>
