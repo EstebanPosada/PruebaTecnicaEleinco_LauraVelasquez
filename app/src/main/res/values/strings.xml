@@ -11,4 +11,9 @@
     <string name="current_location">Ubicación Actual</string>
     <string name="restaurants_location">Ubicación Restaurantes</string>
     <string name="your_location">Estas aquí</string>
+    <string name="item_mapa">Mapa</string>
+    <string name="item_lista">Restaurantes</string>
+    <string name="item_logout">Log out</string>
+    <string name="lista_1">Lista Restaurantes</string>
+    <string name="lista_2">Otra Lista</string>
 </resources>

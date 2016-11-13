@@ -1,9 +1,11 @@
 package lauravelasquezcano.com.pruebatecnicaeleinco;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -18,9 +20,8 @@ import java.net.URL;
 
 public class ListaRestaurantes extends AppCompatActivity {
 
-    ListView lista;
-    TextView pruebita;
-    ArrayAdapter adapter;
+    ListView lista,lista2;
+    ArrayAdapter adapter,adapter2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,61 +29,43 @@ public class ListaRestaurantes extends AppCompatActivity {
         setContentView(R.layout.activity_lista_restaurantes);
 
         lista=(ListView) findViewById(R.id.lvLista);
-        pruebita=(TextView) findViewById(R.id.tvPruebita) ;
+        adapter=new MyAdapter(this);
+        lista.setAdapter(adapter);
 
-        //adapter=new Adapter(this);
-        //lista.setAdapter(adapter);
+        lista2=(ListView) findViewById(R.id.lvLista2);
+        adapter2=new OtherAdapter(this);
+        lista2.setAdapter(adapter2);
 
-        new JSONTask().execute("https://www.dropbox.com/s/livuxsw8wmk6tsr/pruebaEleinco_mapas.txt?dl=0");
 
     }
 
-    public class JSONTask extends AsyncTask<String ,String ,String>{
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
 
-        @Override
-        protected String doInBackground(String... strings) {
-
-            HttpURLConnection connection=null;
-            BufferedReader reader=null;
-
-            try {
-                URL url=new URL(strings[0]);
-                connection=(HttpURLConnection) url.openConnection();
-                connection.connect();
-
-                InputStream stream=connection.getInputStream();
-                reader=new BufferedReader(new InputStreamReader(stream));
-                StringBuffer buffer=new StringBuffer();
-
-                String line="";
-                while ((line=reader.readLine())!=null){
-                    buffer.append(line);
-                }
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }finally {
-                if (connection!=null){
-                    connection.disconnect();
-                }
-                connection.disconnect();
-                try {
-                    if (reader!=null){
-                        reader.close();
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            pruebita.setText(s);
-
-        }
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.iMapa:
+                finish();
+                Intent intent=new Intent(this, ActivityMapa.class);
+                startActivity(intent);
+                break;
+            case R.id.iRestaurantes:
+                break;
+            case R.id.iLogout:
+                finish();
+                break;
+
+        }
+        return true;
+    }
+
+
+
+
+
 }

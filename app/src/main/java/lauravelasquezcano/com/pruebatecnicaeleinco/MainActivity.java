@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         if (correo_capturado.equals(correo) && contrasena_capturada.equals(contrasena)){
             guardarPreferencias();
 
-            Intent intent = new Intent(this, ActivityMapa.class);
+            Intent intent = new Intent(this, ListaRestaurantes.class);
             startActivity(intent);
             Toast.makeText(this, "Iniciando sesión...", Toast.LENGTH_SHORT).show();
         }else{

@@ -10,12 +10,39 @@
         android:text="@string/restaurante_prueba"
         android:textSize="@dimen/restaurante_size"/>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvDistancia"
-        android:text="@string/distancia_prueba"
-        android:textSize="@dimen/distanacia_size"/>
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tvLatitud"
+            android:textSize="@dimen/distanacia_size"
+            android:layout_weight="1"
+            android:text="@string/distancia_prueba"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tvLongitud"
+            android:textSize="@dimen/distanacia_size"
+            android:layout_weight="1"
+            android:text="@string/distancia_prueba"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tvDistancia"
+            android:textSize="@dimen/distanacia_size"
+            android:layout_weight="1"
+            android:text="@string/distancia_prueba"/>
+
+    </LinearLayout>
+
+
 
 
 </LinearLayout>

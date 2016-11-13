@@ -7,17 +7,45 @@
     android:orientation="vertical"
     tools:context="lauravelasquezcano.com.pruebatecnicaeleinco.ListaRestaurantes">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="holi hermosurita :* :D"
-        android:id="@+id/tvPruebita"/>
-    <ListView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lvLista">
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lista_1"/>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lvLista"
+            >
+        </ListView>
+
+    </LinearLayout>
 
 
-    </ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lista_2"/>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lvLista2"
+            >
+        </ListView>
+
+    </LinearLayout>
 
 </LinearLayout>
